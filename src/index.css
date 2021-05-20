@@ -1,13 +1,174 @@
+/** @format */
+
+html {
+  min-height: 100%;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url("./img/bg-01.png");
+  background-position: center center;
+  background-repeat: repeat-y;
+  background-size: 100%;
+  min-height: 100%;
+  padding-bottom: 5rem;
+}
+h1,
+h2 {
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+
+  text-transform: uppercase;
+
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h3 {
+  color: white;
+  padding-top: 1rem;
+  font-size: 38px;
+  text-align: center;
+  text-align: left;
+}
+.lista-citas .media {
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 3rem;
+}
+
+.lista-citas .media:last-of-type {
+  border-bottom: 0;
+}
+.lista-citas .media-body p {
+  margin: 0;
+}
+.lista-citas .media-body button {
+  margin-top: 1rem !important;
+}
+.lista-citas .media-body span {
+  font-weight: bold;
+}
+
+label {
+  color: white;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+input[type="date"],
+input[type="time"] {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.cita {
+  padding: 2rem;
+  background: white;
+  border-bottom: 1px solid #e1e1e1;
+  color: black;
+}
+
+.cita .mascota p {
+  font-weight: 400;
+  color: #40b8a8;
+  font-size: 24px;
+  margin-bottom: 0.8rem;
+}
+
+.cita p {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 0.8rem;
+}
+.cita p span {
+  font-weight: normal;
+}
+
+.cita .fecha {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 20px;
+}
+
+.cita:first-of-type {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.cita:last-of-type {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.alerta-error {
+  background-color: white;
+  color: red;
+  padding: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Staatliches", cursive;
+}
+
+.emoji {
+  padding-right: 10px;
+}
+
+button {
+  background-color: #40b8a8;
+  height: 65px;
+  border: none;
+  color: white !important;
+  transition: all 0.4s ease-in-out;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #1c9b8a;
+  color: white;
+}
+
+.alert {
+  background-color: rgb(255, 91, 91);
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.ok {
+  background-color: rgb(74, 218, 86);
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 3px;
+}
+
+button.eliminar {
+  background-color: rgb(255, 91, 91);
+  margin-top: 30px;
+  height: 40px;
+  border: none;
+  color: white !important;
+  transition: all 0.4s ease-in-out;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+button.eliminar:hover {
+  background-color: rgb(255, 51, 51);
+  color: white;
 }

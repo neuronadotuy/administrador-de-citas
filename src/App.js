@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
+
+import { Fragment, useState, useEffect } from "react";
+import AdministrarCitas from "./components/AdministrarCitas";
+import Formulario from "./components/Formulario";
 
 function App() {
+  // Citas desde localStorage
+  let citasIniciales = JSON.parse(localStorage.getItem("citas"));
+  if (!citasIniciales) {
+    citasIniciales = [];
+  }
+
+  const [citas, setCitas] = useState(citasIniciales);
+
+  useEffect(() => {
+    if (citasIniciales) {
+      localStorage.setItem("citas", JSON.stringify(citas));
+    } else {
+      localStorage.setItem("citas", JSON.stringify([]));
+    }
+  }, [citas]);
+
+  // Tomar citas actuales y sumar la nueva
+  const crearCita = (cita) => {
+    setCitas([...citas, cita]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <h1>Administrador de Pacientes</h1>
+      <div className="container">
+        <div className="row">
+          <div className="one-half column">
+            <Formulario crearCita={crearCita} />
+          </div>
+          <div className="one-half column">
+            <AdministrarCitas citas={citas} setCitas={setCitas} />
+          </div>
+        </div>
+      </div>
+    </Fragment>
   );
 }
 
